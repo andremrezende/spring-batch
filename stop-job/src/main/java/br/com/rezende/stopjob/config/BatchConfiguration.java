@@ -1,8 +1,9 @@
 package br.com.rezende.stopjob.config;
 
+import br.com.rezende.stopjob.listener.JobCompletionNotificationListener;
+import br.com.rezende.stopjob.model.User;
 import br.com.rezende.stopjob.processor.UserItemProcessor;
 import br.com.rezende.stopjob.writer.LogginItemWriter;
-import br.com.rezende.stopjob.model.User;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
@@ -15,7 +16,6 @@ import org.springframework.batch.item.database.Order;
 import org.springframework.batch.item.database.PagingQueryProvider;
 import org.springframework.batch.item.database.builder.JdbcPagingItemReaderBuilder;
 import org.springframework.batch.item.database.support.SqlPagingQueryProviderFactoryBean;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -30,13 +30,7 @@ import java.util.Map;
 @EnableBatchProcessing
 public class BatchConfiguration {
 
-    @Autowired
-    public JobBuilderFactory jobBuilderFactory;
-
-    @Autowired
-    public StepBuilderFactory stepBuilderFactory;
-
-    @Value("${total:10}")
+    @Value("${total:1}")
     private int total;
 
     @Bean
@@ -95,16 +89,17 @@ public class BatchConfiguration {
     /**
      * Creates a bean that represents our example batch job.
      *
-     * @param exampleJobStep
+     * @param jdbcPaginationStep
      * @param jobBuilderFactory
      * @return
      */
     @Bean
-    public Job jdbcPaginationJob(@Qualifier("jdbcPaginationStep") Step exampleJobStep,
+    public Job jdbcPaginationJob(@Qualifier("jdbcPaginationStep") Step jdbcPaginationStep,
+                                 JobCompletionNotificationListener jobCompletionNotificationListener,
                                  JobBuilderFactory jobBuilderFactory) {
         Job databaseCursorJob = jobBuilderFactory.get("jdbcPaginationJob")
-                .incrementer(new RunIdIncrementer())
-                .flow(exampleJobStep)
+                .incrementer(new RunIdIncrementer()).listener(jobCompletionNotificationListener)
+                .flow(jdbcPaginationStep)
                 .end()
                 .build();
         return databaseCursorJob;

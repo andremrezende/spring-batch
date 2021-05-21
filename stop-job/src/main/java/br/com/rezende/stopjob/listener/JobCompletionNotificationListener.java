@@ -7,8 +7,10 @@ import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.core.listener.JobExecutionListenerSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 
 @Log4j2
+@Component
 public class JobCompletionNotificationListener extends JobExecutionListenerSupport {
 
     private final JdbcTemplate jdbcTemplate;
@@ -20,10 +22,10 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
 
     @Override
     public void afterJob(JobExecution jobExecution) {
-        if(jobExecution.getStatus() == BatchStatus.COMPLETED) {
+        if (jobExecution.getStatus().equals(BatchStatus.COMPLETED) || jobExecution.getStatus().equals(BatchStatus.STOPPED)) {
             log.info("!!! JOB FINISHED! Time to verify the results");
 
-            jdbcTemplate.query("SELECT id, name FROM user",
+            jdbcTemplate.query("SELECT id, name FROM interop.user",
                     (rs, row) -> new User(
                             rs.getInt(1),
                             rs.getString(2))

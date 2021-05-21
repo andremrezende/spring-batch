@@ -3,7 +3,6 @@ package br.com.rezende.stopjob.writer;
 import br.com.rezende.stopjob.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.ExitStatus;
-import org.springframework.batch.core.Job;
 import org.springframework.batch.core.StepExecution;
 import org.springframework.batch.core.StepExecutionListener;
 import org.springframework.batch.core.listener.ItemListenerSupport;
@@ -16,9 +15,6 @@ import java.util.List;
 
 @Slf4j
 public class LogginItemWriter extends ItemListenerSupport implements StepExecutionListener, ItemWriter<User> {
-    @Autowired
-    public Job jdbcPaginationJob;
-
     @Autowired
     JdbcTemplate jdbcTemplate;
 
