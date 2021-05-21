@@ -1,4 +1,4 @@
-package com.batch.BatchSQLExample.model;
+package br.com.rezende.stopjob.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,6 +1,6 @@
-package com.batch.BatchSQLExample.listener;
+package br.com.rezende.stopjob.listener;
 
-import com.batch.BatchSQLExample.model.User;
+import br.com.rezende.stopjob.model.User;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.batch.core.BatchStatus;
 import org.springframework.batch.core.JobExecution;

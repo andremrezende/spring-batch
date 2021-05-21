@@ -1,6 +1,6 @@
-package com.batch.BatchSQLExample.writer;
+package br.com.rezende.stopjob.writer;
 
-import com.batch.BatchSQLExample.model.User;
+import br.com.rezende.stopjob.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.ExitStatus;
 import org.springframework.batch.core.Job;

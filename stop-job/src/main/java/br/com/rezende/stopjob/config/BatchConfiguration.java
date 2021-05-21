@@ -1,8 +1,8 @@
-package com.batch.BatchSQLExample.config;
+package br.com.rezende.stopjob.config;
 
-import com.batch.BatchSQLExample.model.User;
-import com.batch.BatchSQLExample.processor.UserItemProcessor;
-import com.batch.BatchSQLExample.writer.LogginItemWriter;
+import br.com.rezende.stopjob.processor.UserItemProcessor;
+import br.com.rezende.stopjob.writer.LogginItemWriter;
+import br.com.rezende.stopjob.model.User;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;

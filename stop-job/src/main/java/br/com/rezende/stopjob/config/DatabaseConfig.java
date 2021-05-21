@@ -1,4 +1,4 @@
-package com.batch.BatchSQLExample.config;
+package br.com.rezende.stopjob.config;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Value;

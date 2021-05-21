@@ -1,4 +1,4 @@
-package com.batch.BatchSQLExample;
+package br.com.rezende.stopjob;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;

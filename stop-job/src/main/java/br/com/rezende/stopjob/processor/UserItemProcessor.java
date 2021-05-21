@@ -1,6 +1,6 @@
-package com.batch.BatchSQLExample.processor;
+package br.com.rezende.stopjob.processor;
 
-import com.batch.BatchSQLExample.model.User;
+import br.com.rezende.stopjob.model.User;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.batch.item.ItemProcessor;
 
