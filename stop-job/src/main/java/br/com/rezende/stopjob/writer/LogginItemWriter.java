@@ -27,8 +27,7 @@ public class LogginItemWriter extends ItemListenerSupport implements StepExecuti
 
     @Override
     public ExitStatus afterStep(StepExecution stepExecution) {
-        stepExecution.setTerminateOnly();
-        return ExitStatus.STOPPED;
+        return ExitStatus.COMPLETED;
     }
 
     @Override
