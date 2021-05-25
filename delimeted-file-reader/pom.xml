@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.rezende.spring.batch</groupId>
-	<artifactId>FlatFileReaderJob</artifactId>
+	<artifactId>DelimitedFileJob</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>FlatFileReaderJob</name>
-	<description>Job que lê arquivos de largura fixa.</description>
+	<name>DelimitedFileJob</name>
+	<description>Job que lê arquivos de arquivos com linha separado por vírgula.</description>
 
 	<properties>
 		<java.version>1.8</java.version>
