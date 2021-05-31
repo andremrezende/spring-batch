@@ -1,0 +1,2 @@
+# Validation Processor
+Job que implementa um processador de multipla validação de dados. Além do BeanValidating referênte as validações com anotação do Java, uma customização para impedir gravar itens duplicados.

@@ -1,4 +1,4 @@
-package br.com.rezende.spring.batch.delimitedfile.job;
+package br.com.rezende.spring.batch.validator.job;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -11,15 +11,15 @@ import org.springframework.context.annotation.Configuration;
 
 @EnableBatchProcessing
 @Configuration
-public class DelimitedFileJobConfig {
+public class ProcessadorValidacaoJobConfig {
 	@Autowired
-	public JobBuilderFactory jobBuilderFactory;
+	private JobBuilderFactory jobBuilderFactory;
 	
 	@Bean
-	public Job delimitedFileJob(Step delimitedFileStep) {
+	public Job processadorValidacaoJob(Step processadorValidacaoStep) {
 		return jobBuilderFactory
-				.get("delimitedFileJob")
-				.start(delimitedFileStep)
+				.get("processadorValidacaoJob")
+				.start(processadorValidacaoStep)
 				.incrementer(new RunIdIncrementer())
 				.build();
 	}

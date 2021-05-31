@@ -1,0 +1,49 @@
+A empresa XPTO necessita de uma rotina batch que seja capaz de ler diversos arquivos de lançamentos mensais para gerar um demonstrativo orçamentário.
+
+Os arquivos a serem lidos possuem o seguinte formato
+
+código da natureza da despesa, descrição da natureza de despesa, descrição do item, data, valor
+
+Importante Os arquivos de lançamentos estarão sempre ordenados por natureza de despesa, você não precisa se preocupar em agrupar os lançamentos de forma desordenada.
+
+Você deverá criar um Job chamado DemonstrativoOrcamentarioJob para ler os arquivos e agrupar os lançamentos por natureza da despesa, para gerar os totais gastos nessa categoria, incluindo os detalhamentos da mesma. O demonstrativo deverá ser impresso no seguinte formato
+
+---- Demonstrativo orçamentário ----
+[44905224] EQUIPAMENTO DE PROTEÇÃO SEGURANÇA E SOCORRO - R$ 1.000,00
+	 [01052020] Alarme - R$ 1.000,00
+---- Demonstrativo orçamentário ----
+[44905287] MATERIAL DE CONSUMO DE USO DURADOURO - R$ 2.000,00
+	 [03052020] Bandeiras - R$ 500,00
+	 [04052020] Guarda Sol - R$ 500,00
+	 [02052020] Cortina de sala - R$ 1.000,00
+---- Demonstrativo orçamentário ----
+[33903016] MATERIAL DE EXPEDIENTE - R$ 4.000,00
+	 [10052020] Cartucho Impressora - R$ 2.000,00
+	 [01052020] Resma de Papel A4 - R$ 2.000,00
+---- Demonstrativo orçamentário ----
+[44905218] COLEÇÕES E MATERIAIS BIBLIOGRÁFICOS - R$ 8.000,00
+	 [11052020] Livro de Algoritmos - R$ 4.000,00
+	 [12052020] Dicionários - R$ 4.000,00
+---- Demonstrativo orçamentário ----
+[33903024] MATERIAL P MANUT. DE BENS IMÓVEISINSTALAÇÕES - R$ 16.000,00
+	 [11052020] Aparelhos Sanitários - R$ 6.000,00
+	 [12052020] Cimento - R$ 2.000,00
+	 [13052020] Amianto - R$ 8.000,00
+---- Demonstrativo orçamentário ----
+[33903302] PASSAGENS PARA O EXTERIOR - R$ 32.000,00
+	 [01052020] Viagem para Las Vegas - R$ 32.000,00
+OBS Os arquivos de lançamentos estão em anexo.
+
+Perguntas dessa tarefa
+Implemente o batch e informe o código do step e leitor configurados. Quais foram os principais componentes da solução
+
+Modifique o batch para ler do banco de dados. Para isso, crie um banco XPTO e rode os scripts do arquivo scripts.sql, anexo nas instruções da tarefa. Ele vai criar a tabela lancamento e adicionar dados nela.
+
+Informe o código do step e leitor configurados. Quais foram os principais componentes da solução.
+
+
+1. Implemente o batch e informe o código do step e leitor configurados. Quais foram os principais componentes da solução?
+
+2. Modifique o batch para ler do banco de dados. Para isso, crie um banco XPTO e rode os scripts do arquivo scripts.sql, anexo nas instruções da tarefa. Ele vai criar a tabela lancamento e adicionar dados nela.
+Informe o código do step e leitor configurados. Quais foram os principais componentes da solução?
+

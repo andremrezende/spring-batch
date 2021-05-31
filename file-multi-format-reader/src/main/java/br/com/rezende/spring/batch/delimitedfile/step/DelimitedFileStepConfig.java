@@ -16,7 +16,7 @@ public class DelimitedFileStepConfig {
 	public StepBuilderFactory stepBuilderFactory;
 
 	@Bean
-	public Step delimitedFileStep(ItemReader<Client> DelimitedFileReader, ItemWriter<Client> DelimitedFileWriter) {
+	public Step DelimitedFileStep(ItemReader<Client> DelimitedFileReader, ItemWriter<Client> DelimitedFileWriter) {
 		return stepBuilderFactory.get("DelimitedFileStep").<Client, Client>chunk(1).reader(DelimitedFileReader)
 				.writer(DelimitedFileWriter).build();
 	}
