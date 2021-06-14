@@ -117,3 +117,5 @@ INSERT INTO cliente (nome, idade, email, faixa_salarial) VALUES ('Modesta Kiehn'
 INSERT INTO cliente (nome, idade, email, faixa_salarial) VALUES ('Madonna Russel MD', 61, 'yundt.eda@example.net', '33943.39');
 INSERT INTO cliente (nome, idade, email, faixa_salarial) VALUES ('Michel Borer', 61, 'zkub@example.org', '41.63');
 INSERT INTO cliente (nome, idade, email, faixa_salarial) VALUES ('Mr. Major OConnell IV', 96, 'zmuller@example.org', '57016018.85');
+
+update cliente set faixa_salarial = null where cliente in (select cliente from cliente  limit 10);
