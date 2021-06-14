@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.springbatch</groupId>
-	<artifactId>CustomFlatFileWriterJob</artifactId>
+	<artifactId>JdbcJob</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>CustomFlatFileWriterJob</name>
-	<description>Job que gera um demonstrativo orçamentário a partir de arquivos de lançamentos.</description>
+	<name>JdbcJob</name>
+	<description>Job que gera contas bancárias para clientes no banco de dados.</description>
 
 	<properties>
 		<java.version>1.8</java.version>
